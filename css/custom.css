@@ -4,3 +4,9 @@ body {
 tr td button {
     width: 45%;
 }
+#navbar {
+    background-color:#2196F3;
+    color:#fff;
+    padding-top:10px;
+    padding-bottom: 15px;
+}
