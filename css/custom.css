@@ -1,12 +1,39 @@
 body {
     background-color: whitesmoke;
 }
-tr td button {
-    width: 45%;
-}
 #navbar {
     background-color:#2196F3;
     color:#fff;
     padding-top:10px;
     padding-bottom: 15px;
+}
+@media (max-width: 766px) {
+    .page-content {
+        margin-top: 10px;
+    }
+}
+.inner-header {
+    padding-left: 20px;
+}
+.table-container {
+    width: 100%;
+    overflow-y: auto;
+    _overflow: auto;
+    margin: 0 0 1em;
+}
+.table-responsive {
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #DDD;
+}
+#createUserForm {
+    padding: 40px;
+}
+.button-td {
+    text-align: center;
+}
+tr td {
+    white-space: nowrap;
 }
