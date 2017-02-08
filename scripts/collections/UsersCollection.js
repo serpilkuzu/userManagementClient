@@ -11,9 +11,6 @@ define([
       var user2 = new UserModel({id: 2, name: 'user 2', surname: 'surname 2'});
       var user3 = new UserModel({id: 3, name: 'user ', surname: 'surname '});
       this.add([user1, user2, user3]);
-    },
-    addUser: function (model) {
-        this.add(model);
     }
   });
   return UsersCollection;

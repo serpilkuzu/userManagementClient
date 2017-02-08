@@ -13,7 +13,8 @@ define(['jquery',
             "welcome": "welcome",
             "create": "create",
             "list": "listUsers",
-            "edit/:userId":  "editUser"
+            "edit/:userId":  "editUser",
+            "*default": "welcome"
         }
     });
 
@@ -33,7 +34,6 @@ define(['jquery',
 
         router.on('route:create', function () {
             console.log("Router --> createUser");
-            //this.loadView(new AnotherView());
             new CreateUserView();
 
         });
