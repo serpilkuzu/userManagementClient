@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    <title>Sample HTML</title>
+    <title>User Management System</title>
     <script data-main="scripts/main" src="scripts/require.js"></script>
 </head>
 
@@ -18,22 +18,12 @@
 <br>
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-sm-2">
-            <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-                <li class="welcome-nav"><a href="#welcome">Home</a></li>
-                <li class="create-nav"><a href="#create">Create User</a></li>
-                <li class="list-nav"><a href="#list">List Users</a></li>
-            </ul>
+        <nav id="left-navbar" class="col-sm-2">
+            <!-- NavbarView comes here -->
         </nav>
         <div class="col-sm-10 text-left page-content">
-            <div class="container-fluid">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2 id="inner-header">Welcome</h2>
-                    </div>
-                    <div class="panel-body" id="changing-div">
-                    </div>
-                </div>
+            <div class="container-fluid" id="view-container">
+                <!-- Customized view comes here  -->
             </div>
         </div>
     </div>

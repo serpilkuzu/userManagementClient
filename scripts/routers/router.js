@@ -1,12 +1,11 @@
-define(['jquery',
-    'underscore',
+define([
     'backbone',
-    'models/UserModel',
     'views/ListUsersView',
     'views/WelcomeView',
     'views/CreateUserView',
-    'views/EditUserView'
-], function($, _, Backbone, UserModel, ListUsersView, WelcomeView, CreateUserView, EditUserView) {
+    'views/EditUserView',
+    'views/NavbarView'
+], function(Backbone, ListUsersView, WelcomeView, CreateUserView, EditUserView, NavbarView) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -24,23 +23,38 @@ define(['jquery',
 
         router.on('route:welcome', function () {
             console.log("Router --> welcome");
-            new WelcomeView();
+            $('title').text("Welcome");
+            var view = new WelcomeView();
+            $('#view-container').html(view.render().el);
+            var navbarView = new NavbarView({selected: "welcome"});
+            $('#left-navbar').html(navbarView.render().el);
         });
 
         router.on('route:listUsers', function () {
             console.log("Router --> listUsers");
-            new ListUsersView();
+            $('title').text("List Users");
+            var view = new ListUsersView();
+            $('#view-container').html(view.render().el);
+            var navbarView = new NavbarView({selected: "list"});
+            $('#left-navbar').html(navbarView.render().el);
         });
 
         router.on('route:create', function () {
             console.log("Router --> createUser");
-            new CreateUserView();
-
+            $('title').text("Create User");
+            var view = new CreateUserView();
+            $('#view-container').html(view.render().el);
+            var navbarView = new NavbarView({selected: "create"});
+            $('#left-navbar').html(navbarView.render().el);
         });
 
         router.on('route:editUser', function (id) {
             console.log("Router --> editUser");
-            new EditUserView({userId: id});
+            $('title').text("Edit User");
+            var view = new EditUserView({userId: id});
+            $('#view-container').html(view.render().el);
+            var navbarView = new NavbarView({selected: "edit"});
+            $('#left-navbar').html(navbarView.render().el);
         });
 
         Backbone.history.start();
