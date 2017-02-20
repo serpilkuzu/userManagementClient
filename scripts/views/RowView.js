@@ -1,9 +1,7 @@
 define([
-    'jquery',
-    'underscore',
     'backbone',
     'text!templates/row.html'
-], function($, _, Backbone, rowTemplate){
+], function(Backbone, rowTemplate){
 
     var RowView = Backbone.View.extend({
 

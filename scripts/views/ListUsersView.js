@@ -32,7 +32,7 @@ define([
                         }
                     );
                 } else {
-                    that.$el.html(that.noItemTemplate);
+                    that.$(".panel-body").html(that.noItemTemplate);
                 }
             });
             this.$el = that.$el;
