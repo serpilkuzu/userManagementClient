@@ -9,24 +9,36 @@ define([
 ], function(Backbone, UsersCollection, RowView, ListTemplate){
 
     var listView = Backbone.View.extend({
+
         template : _.template(ListTemplate),
-        userList : new UsersCollection(),
+        noItemTemplate : _.template("<p>There is no user. Please create user.</p>"),
+
         initialize: function () {
-            console.log("initializing");
-            this.render();
+            console.log("List view is being initialized...");
+            this.collection = new UsersCollection();
         },
+
         render: function () {
             var that = this;
+            var fetchUsers = this.collection.fetch();
+            console.log("User collection is fetched.");
             that.$el.html(this.template);
-            this.userList.each(
-                function (model) {
-                    var view = new RowView({model: model});
-                    that.$('#table-body').append(view.render().el);
+            fetchUsers.done(function() {
+                if (that.collection.length > 0) {
+                    that.collection.each(
+                        function (model) {
+                            var view = new RowView({model: model});
+                            that.$('#table-body').append(view.render().el);
+                        }
+                    );
+                } else {
+                    that.$el.html(that.noItemTemplate);
                 }
-            );
+            });
             this.$el = that.$el;
             return this;
         }
+
     });
 
     return listView;
