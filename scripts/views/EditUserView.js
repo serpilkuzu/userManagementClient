@@ -23,11 +23,7 @@ define([
             var fetchUser = this.model.fetch({
                 success: function () {
                     console.log("User with id "+ that.userId +" is fetched.");
-                    that.$el.html(that.template);
-                    that.$('#firstName').val(that.model.get("name"));
-                    that.$('#surname').val(that.model.get("surname"));
-                    that.$('#age').val(that.model.get("age"));
-                    that.$('#email').val(that.model.get("email"));
+                    that.$el.html(that.template(that.model.attributes));
                 }, error : function () {
                     console.warn("User with given id " + that.userId + " is not found!");
                     alert("User with given id " + that.userId + " is not found!");
