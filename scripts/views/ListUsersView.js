@@ -3,19 +3,18 @@
  */
 define([
     'backbone',
-    'collections/UsersCollection',
     'views/RowView',
     'text!templates/listUsers.html'
-], function(Backbone, UsersCollection, RowView, ListTemplate){
+], function(Backbone, RowView, ListTemplate){
 
     var listView = Backbone.View.extend({
 
         template : _.template(ListTemplate),
         noItemTemplate : _.template("<p>There is no user. Please create user.</p>"),
 
-        initialize: function () {
+        initialize: function (options) {
             console.log("List view is being initialized...");
-            this.collection = new UsersCollection();
+            this.collection = options.collection;
         },
 
         render: function () {
