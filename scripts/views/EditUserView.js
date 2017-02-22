@@ -4,9 +4,8 @@
 define([
     'backbone',
     'text!templates/editUser.html',
-    'collections/UsersCollection',
     'models/UserModel'
-], function(Backbone, EditTemplate, UsersCollection, UserModel) {
+], function(Backbone, EditTemplate, UserModel) {
 
     var editView = Backbone.View.extend({
 
@@ -39,25 +38,23 @@ define([
 
         editUser: function () {
             var options = {
+                success: function (model) {
+                    console.log("User is updated. User id: " + model.get("id"));
+                    alert("User is updated successfully.");
+                },
                 error: function (model, error) {
+                    console.warn("User is not valid!");
                     alert(error);
                 }
             };
-            var editedUser = new UserModel({
-                id: this.userId,
+            var editedUser = {
                 name: $('#firstName').val(),
                 surname: $('#surname').val(),
                 age: parseInt($('#age').val()),
                 email: $('#email').val()
-            });
+            };
 
-            if (editedUser.isValid()) {
-                editedUser.save();
-                alert("User is updated successfully.");
-            } else {
-                this.model.save(editedUser, options);
-                console.warn("User is not valid!");
-            }
+            this.model.save(editedUser, options);
         }
 
     });

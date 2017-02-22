@@ -27,7 +27,13 @@ define([
 
         createUser: function () {
             var options = {
+                success: function (model) {
+                    console.log("User is created. User id: " + model.get("id"));
+                    alert("User is created successfully. User id: " + model.get("id"));
+                    Backbone.history.navigate("list", {trigger: true});
+                },
                 error: function (model, error) {
+                    console.warn("User is not valid. Error message: " + error);
                     alert(error);
                 }
             };
@@ -38,14 +44,7 @@ define([
                 email: $('#email').val()
             });
 
-            if (user.isValid()) {
-                user.save();
-                alert("User is created successfully.");
-                Backbone.history.navigate("list", {trigger: true});
-            } else {
-                console.log("User is not valid");
-                user.save(user, options);
-            }
+            user.save(user, options);
         }
 
     });

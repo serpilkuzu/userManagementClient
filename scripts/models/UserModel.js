@@ -3,7 +3,7 @@ define([
 ], function(Backbone) {
     var UserModel = Backbone.Model.extend({
         urlRoot:  "http://localhost:8080/users",
-        validate: function (attrs) {
+        validate: function (attrs, options) {
 
             var email_filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
