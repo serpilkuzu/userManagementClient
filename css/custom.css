@@ -31,6 +31,9 @@ body {
 #createUserForm {
     padding: 40px;
 }
+#editUserForm {
+    padding: 40px;
+}
 .button-td {
     text-align: center;
 }
