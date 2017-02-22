@@ -4,8 +4,9 @@ define([
     'views/WelcomeView',
     'views/CreateUserView',
     'views/EditUserView',
-    'views/NavbarView'
-], function(Backbone, ListUsersView, WelcomeView, CreateUserView, EditUserView, NavbarView) {
+    'views/NavbarView',
+    'collections/UsersCollection'
+], function(Backbone, ListUsersView, WelcomeView, CreateUserView, EditUserView, NavbarView, UsersCollection) {
 
     var AppRouter = Backbone.Router.extend({
         routes: {
@@ -33,7 +34,7 @@ define([
         router.on('route:listUsers', function () {
             console.log("Router --> listUsers");
             $('title').text("List Users");
-            var view = new ListUsersView();
+            var view = new ListUsersView({collection: new UsersCollection()});
             $('#view-container').html(view.render().el);
             var navbarView = new NavbarView({selected: "list"});
             $('#left-navbar').html(navbarView.render().el);
