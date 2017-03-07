@@ -19,19 +19,20 @@ define([
 
         render: function () {
             var that = this;
-            var fetchUsers = this.collection.fetch();
             console.log("User collection is fetched.");
             that.$el.html(this.template);
-            fetchUsers.done(function() {
-                if (that.collection.length > 0) {
-                    that.collection.each(
-                        function (model) {
-                            var view = new RowView({model: model});
-                            that.$('#table-body').append(view.render().el);
-                        }
-                    );
-                } else {
-                    that.$(".panel-body").html(that.noItemTemplate);
+            this.collection.fetch({
+                success: function() {
+                    if (that.collection.length > 0) {
+                        that.collection.each(
+                            function (model) {
+                                var view = new RowView({model: model});
+                                that.$('#table-body').append(view.render().el);
+                            }
+                        );
+                    } else {
+                        that.$(".panel-body").html(that.noItemTemplate);
+                    }
                 }
             });
             this.$el = that.$el;

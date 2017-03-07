@@ -1,0 +1,55 @@
+{
+  "name": "userManagementClient",
+  "version": "1.0.0",
+  "description": "Javascript Unit Testing",
+  "main": "test/test-main.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jasmine-core": "^2.5.2",
+    "jasmine-jquery": "^2.1.1",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-requirejs": "^1.1.0",
+    "sinon": "^1.17.7"
+  },
+  "peerDependencies": {
+    "jasmine-core": "*",
+    "karma": "*",
+    "jasmine": "*",
+    "jasmine-jquery": "*",
+    "jquery": "*",
+    "sinon": "*"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "jasmine-jquery": "^2.1.1",
+    "jasmine-jquery-matchers": "^1.4.2",
+    "jasmine-sinon": "^0.4.0",
+    "jquery": "^3.1.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coffee-preprocessor": "^1.0.1",
+    "karma-html-reporter": "^0.2.7",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-requirejs": "^1.1.0",
+    "karma-sinon": "^1.0.5",
+    "karma-spec-reporter": "0.0.26",
+    "sinon": "^1.17.7"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js --reporters html --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://serpilKuzuNevalabs@bitbucket.org/nuevolabs/js-client.git"
+  },
+  "keywords": [],
+  "author": "Serpil Kuzu",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/nuevolabs/js-client#readme"
+}
