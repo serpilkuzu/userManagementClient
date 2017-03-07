@@ -17,7 +17,7 @@ define(['views/EditUserView', 'jquery'], function (EditUserView, $) {
 
         beforeEach(function () {
             view = new EditUserView({userId: MOCK_GET_DATA.id});
-            spyOn($, 'ajax').and.callFake(function(options) {
+            spyOn($, 'ajax').and.callFake(function (options) {
                 options.success(MOCK_GET_DATA);
             });
         });

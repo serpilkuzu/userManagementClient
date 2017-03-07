@@ -25,9 +25,8 @@ define([
                     console.log("User with id "+ that.userId +" is fetched.");
                     that.$el.html(that.template(that.model.attributes));
                 }, error : function (model, response, options) {
-                    console.warn("User with given id " + that.userId + " is not found!");
-                    alert(response.text);
-                    alert("User with given id " + that.userId + " is not found!");
+                    console.warn("Error occurred when fetching user. Error message: " + response.text);
+                    alert("Error occurred when fetching user. Error message: " + response.text);
                     Backbone.history.navigate("list", {trigger: true});
                 }
             });

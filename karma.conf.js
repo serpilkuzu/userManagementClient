@@ -1,92 +1,88 @@
 // Karma configuration
 // Generated on Fri Feb 24 2017 13:00:22 GMT+0300 (+03)
 
-module.exports = function(config) {
-  config.set({
+module.exports = function (config) {
+    config.set({
 
-    // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
-
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine-jquery', 'jasmine', 'requirejs'],
+        // base path that will be used to resolve all patterns (eg. files, exclude)
+        basePath: '',
 
 
-    // list of files / patterns to load in the brow
-      // ser
-    files: [
-        {pattern: 'libs/*.js', included: false},
-        {pattern: 'libs/**/*.js', included: false},
-        {pattern: 'scripts/*.js', included: false},
-        {pattern: 'scripts/**/*.js', included: false},
-        {pattern: 'scripts/**/*.html', included: false},
-        {pattern: 'test/**/*.js', included: false},
-        'test/test-main.js'
-
-    ],
+        // frameworks to use
+        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+        frameworks: ['jasmine-jquery', 'jasmine', 'requirejs'],
 
 
-    // list of files to exclude
-    exclude: [
-    ],
+        // list of files / patterns to load in the browser
+        files: [
+            {pattern: 'libs/*.js', included: false},
+            {pattern: 'libs/**/*.js', included: false},
+            {pattern: 'scripts/*.js', included: false},
+            {pattern: 'scripts/**/*.js', included: false},
+            {pattern: 'scripts/**/*.html', included: false},
+            {pattern: 'test/**/*.js', included: false},
+            'test/test-main.js'
+        ],
 
 
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+        // list of files to exclude
+        exclude: [],
 
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'html'],
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {},
 
 
-    // web server port
-    port: 9876,
+        // test results reporter to use
+        // possible values: 'dots', 'progress'
+        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+        reporters: ['progress', 'html'],
 
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+        // web server port
+        port: 9876,
 
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_INFO,
 
 
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: true,
 
 
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
-
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity,
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: ['Chrome'],
 
 
-    htmlReporter: {
-        outputDir: "test_output",
-        templatePath: null,
-        focusOnFailures: true,
-        namedFiles: false,
-        pageTitle: "Test Results",
-        urlFriendlyName: false,
-        reportName: "TestResults",
+        // Continuous Integration mode
+        // if true, Karma captures browsers, runs the tests and exits
+        singleRun: false,
 
-        preserveDescribeNesting: false,
-        foldAll: false
-    }
+        // Concurrency level
+        // how many browser should be started simultaneous
+        concurrency: Infinity,
 
-  })
+
+        htmlReporter: {
+            outputDir: "test_output",
+            templatePath: null,
+            focusOnFailures: true,
+            namedFiles: false,
+            pageTitle: "Test Results",
+            urlFriendlyName: false,
+            reportName: "TestResults",
+
+            preserveDescribeNesting: false,
+            foldAll: false
+        }
+
+    })
 };

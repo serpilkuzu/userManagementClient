@@ -23,14 +23,13 @@ require.config({
             ],
             exports: 'Backbone'
         }
-
     },
     paths: {
-        'jquery' : '../libs/jquery-3.1.1.min',
-        'underscore' : '../libs/underscore-min',
-        'backbone' : '../libs/backbone-min',
-        'text' : '../libs/text',
-        'requirejs' : '../libs/require'
+        'jquery': '../libs/jquery-3.1.1.min',
+        'underscore': '../libs/underscore-min',
+        'backbone': '../libs/backbone-min',
+        'text': '../libs/text',
+        'requirejs': '../libs/require'
     },
 
     deps: tests,

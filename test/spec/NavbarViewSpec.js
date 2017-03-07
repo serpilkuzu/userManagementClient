@@ -8,7 +8,7 @@ define(['views/NavbarView'], function (NavbarView) {
         var view;
 
         beforeEach(function () {
-            view = new NavbarView({selected : 'list'});
+            view = new NavbarView({selected: 'list'});
             view.render();
         });
 

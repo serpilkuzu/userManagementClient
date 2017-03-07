@@ -16,8 +16,8 @@ define(["models/UserModel", 'views/CreateUserView', 'jquery'], function (UserMod
 
             var userModel;
 
-            beforeEach(function() {
-                spyOn($, 'ajax').and.callFake(function(options) {
+            beforeEach(function () {
+                spyOn($, 'ajax').and.callFake(function (options) {
                     options.success(MOCK_GET_DATA);
                 });
 
@@ -30,11 +30,11 @@ define(["models/UserModel", 'views/CreateUserView', 'jquery'], function (UserMod
                 expect(userModel).toBeDefined();
             });
 
-            it('should go to the right url', function() {
+            it('should go to the right url', function () {
                 expect($.ajax.calls.mostRecent().args[0].url).toEqual(userModel.urlRoot);
             });
 
-            it('should get data from server', function() {
+            it('should get data from server', function () {
                 expect(userModel).toBeDefined();
                 expect(userModel.get('name')).toEqual(MOCK_GET_DATA.name);
                 expect(userModel.get('surname')).toEqual(MOCK_GET_DATA.surname);
@@ -42,7 +42,7 @@ define(["models/UserModel", 'views/CreateUserView', 'jquery'], function (UserMod
                 expect(userModel.get('location')).toEqual(MOCK_GET_DATA.location);
             });
 
-            afterEach(function() {
+            afterEach(function () {
                 userModel = undefined;
             });
 
@@ -63,7 +63,7 @@ define(["models/UserModel", 'views/CreateUserView', 'jquery'], function (UserMod
                 userModel = new UserModel();
                 spyOn(userModel, 'validate').and.callThrough();
 
-                spyOn($, 'ajax').and.callFake(function(options) {
+                spyOn($, 'ajax').and.callFake(function (options) {
                     options.success(MOCK_GET_DATA);
                 });
             });

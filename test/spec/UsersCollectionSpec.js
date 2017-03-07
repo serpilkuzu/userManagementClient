@@ -1,7 +1,7 @@
 /**
  * Created by serpilkuzu on 01/03/2017.
  */
-define(['collections/UsersCollection', 'jquery'], function(UsersCollection, $) {
+define(['collections/UsersCollection', 'jquery'], function (UsersCollection, $) {
     describe("UsersCollection", function () {
 
         var usersCollection;
@@ -32,14 +32,14 @@ define(['collections/UsersCollection', 'jquery'], function(UsersCollection, $) {
 
             beforeEach(function () {
                 spyOn(usersCollection, 'fetch').and.callThrough();
-                spyOn($, 'ajax').and.callFake(function(options) {
+                spyOn($, 'ajax').and.callFake(function (options) {
                     options.success(MOCK_FETCH_DATA);
                 });
                 usersCollection.fetch();
             });
 
             it("fetch() should be called", function () {
-               expect(usersCollection.fetch).toHaveBeenCalled();
+                expect(usersCollection.fetch).toHaveBeenCalled();
             });
 
             it("should call the right url", function () {
@@ -54,7 +54,7 @@ define(['collections/UsersCollection', 'jquery'], function(UsersCollection, $) {
             });
 
             afterEach(function () {
-               usersCollection = undefined;
+                usersCollection = undefined;
             });
 
         });
