@@ -13,7 +13,6 @@ define([
         initialize: function (options) {
             console.log("initializing navbar");
             this.selected = options.selected;
-            this.render();
         },
 
         render: function () {

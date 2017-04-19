@@ -1,2 +1,4 @@
 #Files to ignore
 .idea
+test_output
+node_modules
